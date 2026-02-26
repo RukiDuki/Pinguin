@@ -1,0 +1,20 @@
+[github]
+    To use ur eyes:
+        * git status (to see what files git is tracking and/or are changed)
+        * git log (to see your commits and their messages)
+        * git log --oneline(formats the commits to a single line per commit) --graph(add a graphical representations of the branches)
+    To manage files:
+        * git init (initiate/create a ".git" directory)
+        * git add . (to all files in the current directory/folder)
+        * git commit -m "<your commit messages>" (to commit all the tracked and/or modeilfed files to a commit/checkpoint)
+        * git remote add origin https://github.com/<creator name>/<project/repo name> (add a remote to a local repo's config)
+        * git push origin main (push the changes from the local to a remote repo)
+        * git pull origin main (pull the changes from the remote to a local repo)
+
+[powershell]
+        * dir (list files in the current directory)
+        * cd <directory name> (change into / move into a directory)
+        * mkdir <directory name> (create folder)
+        * Invoke-Item <file name> (opens a file with it's most appropriate program/software based on it's extension)
+        * explorer . (open the current folder in file explorer)
+
