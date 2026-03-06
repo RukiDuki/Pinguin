@@ -67,14 +67,18 @@
         <img id="pinpin" src="pinpin.jpg" />
         <img id="hat" src="hat.png" />
     </div>
-    <button onclick="dark()" >Click me><</button>
+    <button style="width:100px; height:40px; grid-area: 2/2/2/3" onclick="dark()" id="click">Click me><</button>
         
 	
 
 
     <script>
-        function dark(){
-            document.body.style.backgroundColor = "black";
+        function dark() {
+            document.body.style.backgroundColor = "gray";
+            document.getElementById("pinpin").style.opacity="0.2";
+            document.getElementById("hat").style.opacity = "1";
+            document.getElementById("text").style.opacity = "0.2";
+            document.getElementById("click").style.opacity = "0.2";
         }
     </script>
 </body>
