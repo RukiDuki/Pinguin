@@ -5,7 +5,10 @@
     <title>hehe</title>
     <!-- https://stackoverflow.com/questions/48474/how-do-i-position-one-image-on-top-of-another-in-html
         https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@function
-        https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value -->
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value
+        creating stuff with js:
+            https://stackoverflow.com/questions/66441128/how-to-generate-a-new-html-element-each-time-a-js-function-is-called
+            https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement-->
     <style>
         body {
             display: grid;
@@ -25,17 +28,20 @@
             width: 650px; /*650*/
             height: 650px;
             position: absolute;
-            top: -104px;
+            bottom: -46px;
             left: 307px;
+            border: 1px solid red;
         }
 
-        img#hat:hover {
-        }
+            #hat:hover {
+                /*animation-name: myAnimation;
+            animation-duration: 2s;*/
+            }
 
-        /*@keyframes myAnimation { WTF?!?!? Help!!
+        /*@keyframes myAnimation {
             0% {
-                left: 0px;
-                top: 0px;
+                bottom: -46px;
+                left: 307px;
             }
             50% {
                 left: 200px;
@@ -48,8 +54,7 @@
         }*/
 
         #text {
-            grid-area: 1/2/2/3;
-            background-color: crimson; /*look how to distiguish the two divs*/
+            grid-area: 1/2/2/3; /*look how to distiguish the two divs*/
         }
 
         #meow {
@@ -64,21 +69,32 @@
 	</div>
 
     <div id="meow">
-        <img id="pinpin" src="pinpin.jpg" />
-        <img id="hat" src="hat.png" />
+        <img id="pinpin" src="pinguin free.png" />
+        <img id="hat" src="hat.png" onmouseover="dark()" onmouseout="normal()" onclick="hi()"/>
     </div>
-    <button style="width:100px; height:40px; grid-area: 2/2/2/3" onclick="dark()" id="click">Click me><</button>
         
 	
 
 
     <script>
         function dark() {
-            document.body.style.backgroundColor = "gray";
             document.getElementById("pinpin").style.opacity="0.2";
             document.getElementById("hat").style.opacity = "1";
             document.getElementById("text").style.opacity = "0.2";
             document.getElementById("click").style.opacity = "0.2";
+        }
+        function normal() {
+            document.getElementById("pinpin").style.opacity = "1";
+            document.getElementById("hat").style.opacity = "1";
+            document.getElementById("text").style.opacity = "1";
+            document.getElementById("click").style.opacity = "1";
+        }
+        function hi() {
+            const para = document.createElement("p");
+            const node = document.createTextNode("This is new.");
+            para.appendChild(node);
+            const element = document.getElementById("meow");
+            element.appendChild(para);
         }
     </script>
 </body>
